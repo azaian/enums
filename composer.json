@@ -1,5 +1,5 @@
 {
-    "name": "zaian/php-enums",
+    "name": "azaian/enums",
     "description": "Helper Functions on PHP enums",
     "type": "library",
     "require": {
