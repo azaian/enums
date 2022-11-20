@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Traits;
+namespace azaian\enum;
 
 use Exception;
 
 trait EnumHelperTrait
 {
 
-    public function __invoke(): int|string
+    public function __invoke(): mixed
     {
         return $this->value ?? $this->name;
     }
@@ -20,7 +20,7 @@ trait EnumHelperTrait
 
         foreach (static::cases() as $case) if ($case->name == $name) return $case->value ?? $case->name;
 
-        throw new Exception('undefined enum case ' . class_basename(static::class) . "::" . $name, '422');
+        throw new Exception('undefined enum case ' . self::class_basename(static::class) . "::" . $name, '422');
     }
 
     public static function names(): array
@@ -50,5 +50,12 @@ trait EnumHelperTrait
     {
         $cases = array_column(static::cases(), 'value');
         return in_array($value, $cases);
+    }
+
+    private static function class_basename($class)
+    {
+        $class = is_object($class) ? get_class($class) : $class;
+
+        return basename(str_replace('\\', '/', $class));
     }
 }
