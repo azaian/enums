@@ -1,0 +1,21 @@
+{
+    "name": "zaian/php-enums",
+    "description": "Helper Functions on PHP enums",
+    "type": "library",
+    "require": {
+        "php": "^8.1"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Zaian\\PhpEnums\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "azaian",
+            "email": "abdalmoniem.s.zaian@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
